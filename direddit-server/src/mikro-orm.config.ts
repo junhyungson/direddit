@@ -1,4 +1,9 @@
-import { __POSTGRESPW__, __prod__ } from './constants';
+import {
+  __POSTGRESPW__,
+  __prod__,
+  __POSTGRESUSER__,
+  __POSTGRESDBNAME__,
+} from './constants';
 import { Post } from './entities/Post';
 import { Options } from '@mikro-orm/core'; // `Options` is what you want, no need to get the type from init method
 import path from 'path';
@@ -25,11 +30,13 @@ const config: Options = {
     glob: '!(*.d).{cjs,js,ts}', // how to match migration files (all .js and .ts files, but not .d.ts)
   },
   entities: [Post], // no need for `entitiesTs` this way
-  dbName: 'direddit',
+  // dbName: 'direddit',
+  dbName: __POSTGRESDBNAME__,
   type: 'postgresql', // one of `mongo` | `mysql` | `mariadb` | `postgresql` | `sqlite`
-  user: 'postgres',
+  user: __POSTGRESUSER__,
   password: __POSTGRESPW__,
   debug: !__prod__,
+  allowGlobalContext: true,
 };
 
 export default config;

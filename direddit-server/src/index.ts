@@ -9,7 +9,7 @@ const main = async () => {
   const emFork = orm.em.fork(); // <-- create the fork
   // const post = emFork.create(Post, {
   //   // <-- use the fork instead of global `orm.em`
-  //   title: 'my Third post',
+  //   title: 'my fourth post',
   //   createdAt: new Date(),
   //   updatedAt: new Date(),
   // });
