@@ -35,7 +35,7 @@ const config: Options = {
   type: 'postgresql', // one of `mongo` | `mysql` | `mariadb` | `postgresql` | `sqlite`
   user: __POSTGRESUSER__,
   password: __POSTGRESPW__,
-  debug: !__prod__,
+  debug: !__prod__, // is this in prodction or not?
   allowGlobalContext: true,
 };
 
